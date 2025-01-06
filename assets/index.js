@@ -92,7 +92,7 @@ function isEmpty(value){
 
 function forwardToId(params){
     console.log("Przekierowanie z parametrami:", params.toString());
-    location.href = "/xyz/id.html?" + params
+    location.href = "id.html?" + params
 
 }
 
