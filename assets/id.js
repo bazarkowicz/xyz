@@ -74,7 +74,6 @@ setData("name", params.get("name").toUpperCase());
 setData("surname", params.get("surname").toUpperCase());
 setData("nationality", params.get("nationality").toUpperCase());
 setData("birthday", birthday);
-setData("pesel", params.get("pesel"));
 setData("familyName", params.get("familyName"));
 setData("sex", sex);
 setData("fathersFamilyName", params.get("fathersFamilyName"));
