@@ -1,3 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ochrona hasłem</title>
+  <script type="text/javascript">
+    var password = "xobywatel"; // Zmień to hasło
+    var attempt = 3; // Liczba prób
+
+    function checkPassword() {
+      var enteredPassword = prompt("Wprowadź hasło:", "");
+      if (enteredPassword == password) {
+        alert("Hasło poprawne!");
+        document.getElementById("content").style.display = "block";
+      } else {
+        attempt--;
+        alert("Niepoprawne hasło. Pozostało prób: " + attempt);
+        if (attempt == 0) {
+          document.getElementById("content").innerHTML = "Dostęp zablokowany.";
+        }
+      }
+    }
+
+    window.onload = function() {
+      checkPassword();
+    }
+  </script>
+</head>
+<body>
+  <div id="content" style="display:none;">
+    <h1>Witamy na stronie zabezpieczonej hasłem!</h1>
+    <p>Treść strony, którą chcesz chronić.</p>
+  </div>
+</body>
+</html>
+
 <head>
     <link rel="stylesheet" href="assets/index.css">
     <link rel="icon" type="image/x-icon" href="https://play-lh.googleusercontent.com/_TNbiYKasPy_isTSEg2_UEzVaev4F8fO2lLunsHJ8_Ux2g3OzkSZyzpqvJG1woSj-WD4=w240-h480-rw">
