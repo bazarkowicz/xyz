@@ -1,39 +1,42 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ochrona hasłem</title>
-  <script type="text/javascript">
-    var password = "xobywatel"; // Zmień to hasło
-    var attempt = 3; // Liczba prób
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strona z hasłem</title>
+    <script type="text/javascript">
+        // Funkcja, która sprawdza poprawność hasła
+        function checkPassword() {
+            var password = document.getElementById("password").value;
+            var correctPassword = "xobywatel1"; // Wstaw tutaj swoje hasło
 
-    function checkPassword() {
-      var enteredPassword = prompt("Wprowadź hasło:", "");
-      if (enteredPassword == password) {
-        alert("Hasło poprawne!");
-        document.getElementById("content").style.display = "block";
-      } else {
-        attempt--;
-        alert("Niepoprawne hasło. Pozostało prób: " + attempt);
-        if (attempt == 0) {
-          document.getElementById("content").innerHTML = "Dostęp zablokowany.";
+            if (password === correctPassword) {
+                document.getElementById("content").style.display = "block";
+                document.getElementById("login-form").style.display = "none";
+            } else {
+                alert("Błędne hasło!");
+            }
         }
-      }
-    }
-
-    window.onload = function() {
-      checkPassword();
-    }
-  </script>
+    </script>
 </head>
 <body>
-  <div id="content" style="display:none;">
-    <h1>Witamy na stronie zabezpieczonej hasłem!</h1>
-    <p>Treść strony, którą chcesz chronić.</p>
-  </div>
+
+    <!-- Formularz logowania -->
+    <div id="login-form">
+        <h2>Wprowadź hasło, aby uzyskać dostęp</h2>
+        <input type="password" id="password" placeholder="Wpisz hasło" required>
+        <button onclick="checkPassword()">Zaloguj</button>
+    </div>
+
+    <!-- Ukryta zawartość strony -->
+    <div id="content" style="display:none;">
+        <h1>Witamy na stronie!</h1>
+        <p>Treść dostępna tylko po wpisaniu poprawnego hasła.</p>
+    </div>
+
 </body>
 </html>
+
 
 <head>
     <link rel="stylesheet" href="assets/index.css">
