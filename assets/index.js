@@ -1,4 +1,3 @@
-
 var upload = document.querySelector(".upload");
 
 var imageInput = document.createElement("input");
@@ -10,11 +9,8 @@ document.querySelectorAll(".input_holder").forEach((element) => {
     var input = element.querySelector(".input");
     input.addEventListener('click', () => {
         element.classList.remove("error_shown");
-        document.querySelector('.upload_uploaded').src = e.target.result;
-        document.querySelector('.upload_uploaded').style.display = 'block';
-        };
-        reader.readAsDataURL(file);
-    }
+    })
+
 });
 
 upload.addEventListener('click', () => {
