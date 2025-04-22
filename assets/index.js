@@ -10,14 +10,8 @@ document.querySelectorAll(".input_holder").forEach((element) => {
     var input = element.querySelector(".input");
     input.addEventListener('click', () => {
         element.classList.remove("error_shown");
-
-document.getElementById('photoUpload').addEventListener('change', function(event) {
-    const file = event.target.files[0];
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            document.querySelector('.upload_uploaded').src = e.target.result;
-            document.querySelector('.upload_uploaded').style.display = 'block';
+        document.querySelector('.upload_uploaded').src = e.target.result;
+        document.querySelector('.upload_uploaded').style.display = 'block';
         };
         reader.readAsDataURL(file);
     }
