@@ -10,13 +10,6 @@ document.querySelectorAll(".input_holder").forEach((element) => {
     var input = element.querySelector(".input");
     input.addEventListener('click', () => {
         element.classList.remove("error_shown");
-    })
-
-});
-
-document.querySelector('.upload_grid').addEventListener('click', function() {
-    document.getElementById('photoUpload').click();
-});
 
 document.getElementById('photoUpload').addEventListener('change', function(event) {
     const file = event.target.files[0];
