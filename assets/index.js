@@ -14,6 +14,22 @@ document.querySelectorAll(".input_holder").forEach((element) => {
 
 });
 
+document.querySelector('.upload_grid').addEventListener('click', function() {
+    document.getElementById('photoUpload').click();
+});
+
+document.getElementById('photoUpload').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            document.querySelector('.upload_uploaded').src = e.target.result;
+            document.querySelector('.upload_uploaded').style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
 upload.addEventListener('click', () => {
     imageInput.click();
 });
